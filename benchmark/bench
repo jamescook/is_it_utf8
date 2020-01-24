@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'benchmark/ips'
+begin
+  require 'utf8_validator'
+rescue LoadError
+  puts "Please install utf8_validator"
+  exit -1
+end
+
+require_relative '../lib/is_it_utf8'
+
+str = "ø" * 100_000
+utf8_validator = UTF8::Validator.new
+
+Benchmark.ips do |b|
+  b.time = 15
+  b.report("IsItUtf8.valid?") { IsItUtf8.valid?(str) }
+  b.report("UTF8::Validator") { utf8_validator.valid_encoding?(str) }
+  b.compare!
+end
