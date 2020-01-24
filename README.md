@@ -1,6 +1,6 @@
 # IsItUtf8
 
-![Travis Build](https://travis-ci.com/jamescook/is_it_utf8.svg?branch=master)
+![Travis Build](https://api.travis-ci.org/jamescook/is_it_utf8.svg?branch=master)
 
 IsItUtf8 can check if a string contains 100% valid UTF8 - fast. The heavy
 lifting is done by [fastvalidate-utf-8](https://github.com/lemire/fastvalidate-utf-8)
