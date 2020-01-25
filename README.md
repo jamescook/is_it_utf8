@@ -5,6 +5,9 @@
 IsItUtf8 can check if a string contains 100% valid UTF8 - fast. The heavy
 lifting is done by [fastvalidate-utf-8](https://github.com/lemire/fastvalidate-utf-8)
 
+However, consider simply using `String#valid_encoding?`. Ruby figures our encoding correctness
+when strings are instantiated.
+
 ### Usage
 ```ruby
 require 'is_it_utf8'
